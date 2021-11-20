@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <locale.h>
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	float price, i;
+	printf("Введите вещественное число - цену за 1 кг конфет: ");
+	scanf("%f", &price);
+	printf("Программа выведет стоимость 0.1, 0.2, . . . , 1 кг конфет\n");
+	for (i = 0.1; i < 1.1; i += 0.10)
+	{
+		printf("\nЦена за %.1Lf кг конфет = %.2Lf у.е.\n", i, price*i);
+	}
+	
+}
