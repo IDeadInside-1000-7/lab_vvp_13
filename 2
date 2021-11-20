@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <locale.h>
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	float N, i;
+	printf("Введите целое число N (> 0): ");
+	scanf("%f", &N);
+	printf("\nПрограмма выведет произведение 1.1 · 1.2 · 1.3 · ...(N сомножителей)\n\n");
+	float s = 1;
+	float d = 0.1;
+	float c = 1;
+	for (i = 1.1; i <= N; i += 0.1)
+	{
+		if (N == 2)
+			N += 0.1;
+		else
+			N = N;
+		{
+			s *= c + d;
+			d += 0.1;
+		}
+		
+	}
+	printf("Результат: %.8Lf", s);
+}
