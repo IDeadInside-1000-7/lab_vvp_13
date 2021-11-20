@@ -1,0 +1,20 @@
+#include <stdio.h>
+#include <locale.h>
+#include <math.h>
+void main()
+{
+	setlocale(LC_ALL, "Russian");
+	float A;
+	float N, pwr, d = 1;
+	printf("Введите вещественное число A: ");
+	scanf("%f", &A);
+	printf("\nВведите целое число N (> 0): ");
+	scanf("%f", &N);
+	printf("\nПрограмма найдет сумму 1 + A + A**2 + A**3 + . . . + A**N\n\n");
+	for (float i = 1; i <= N; i++)
+	{
+		pwr = powf(A, i);
+		d += pwr;
+	}
+	printf("Результат: %f\n", d);
+}
