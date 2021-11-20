@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <locale.h>
+int main(void)
+{
+    setlocale(LC_ALL, "Russian");
+    float a;
+    printf("Введите вещественное число A: ");
+    scanf("%f", &a);
+    int n;
+    printf("\nВведите целое число N (> 0): ");
+    scanf("%i", &n);
+    printf("\nПрограмма найдет значение выражения 1 - A + A**2 - A**3 + . ..± A**N (без использования условных операторов)");
+    float a2 = 1, rez = 1;
+    int i;
+    for (i = 2; i <= n+1; ++i)
+    {
+        a2 *= -a;
+        rez += a2;
+    }
+    printf("\nРезультат: %f\n ", rez);
+}
